@@ -50,7 +50,8 @@
   --font-display: "aktiv-grotesk-extended", "Aktiv Grotesk Ex Local", system-ui, sans-serif;
   --font-body:    "Inter", system-ui, sans-serif;
 
-  --pad-x: clamp(1.5rem, 4vw, 4rem);
+  /* Globální horizontální padding — 250px @ 1920, škáluje s viewportem */
+  --pad-x: clamp(1.5rem, 13vw, 250px);
   --section-pad: clamp(5rem, 10vw, 8rem);
 }
 
@@ -317,10 +318,7 @@ ul { list-style: none; }
 .about {
   background: var(--white);
   color: var(--black);
-  padding: var(--section-pad) 13vw;
-}
-@media (max-width: 720px) {
-  .about { padding-inline: var(--pad-x); }
+  padding: var(--section-pad) var(--pad-x);
 }
 
 .team-grid {
